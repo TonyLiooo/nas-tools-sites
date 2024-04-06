@@ -1,10 +1,10 @@
 {
-    "id": "mteam",
+    "id": "mteam-xpcc",
     "name": "\u9992\u5934",
     "domain": "https://xp.m-team.cc/",
     "encoding": "UTF-8",
     "public": false,
-    "parser": "MteamSpider",
+    "parser": "MTeamSpider",
     "search": {
         "paths": [
             {

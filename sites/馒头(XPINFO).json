@@ -1,10 +1,10 @@
 {
-    "id": "mteam",
+    "id": "mteam-kpinfo",
     "name": "\u9992\u5934",
     "domain": "https://kp.m-team.info/",
     "encoding": "UTF-8",
     "public": false,
-    "parser": "MteamSpider",
+    "parser": "MTeamSpider",
     "search": {
         "paths": [
             {
