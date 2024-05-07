@@ -1,0 +1,85 @@
+{
+    "id": "rarbt",
+    "name": "rar BT",
+    "domain": "https://www.rarbt.fun/",
+    "encoding": "UTF-8",
+    "public": true,
+    "proxy": false,
+    "search": {
+        "paths": [
+            {
+                "path": "vod/search.html?wd={keyword}",
+                "method": "get"
+            }
+        ]
+    },
+    "browse": {
+        "path": "vod/show/id/movie/page/{page}.html",
+        "start": 1
+    },
+    "torrents": {
+        "list": {
+            "selector": "body > div.page.list > div.main > div > div > div.module-main.module-page > div.module-items.module-card-items"
+        },
+        "fields": {
+            "id": {
+                "selector": "a[href*=\"/*.html\"]",
+                "attribute": "href",
+                "filters": [
+                    {
+                        "name": "re_search",
+                        "args": [
+                            "\\d+",
+                            0
+                        ]
+                    }
+                ]
+            },
+            "title": {
+                "selector": "body > div.page.list > div.main > div > div > div.module-main.module-page > div.module-items.module-card-items > div:nth-child(1) > div.module-card-item-info > div.module-card-item-title > a > strong"
+            },
+            "details": {
+                "selector": "body > div.page.view > div.main > div > div.module.module-info > div.module-main > div.module-info-main > div.module-info-content > div.module-info-items > div.module-info-item.module-info-introduction > div > p"
+            },
+            "download": {
+                "selector": "a.download-arrow.arrow-magnet",
+                "attribute": "href"
+            },
+            "date_added": {
+                "selector": "td:nth-child(1) > span",
+                "optional": true
+            },
+            "date": {
+                "text": "{% if fields['date_elapsed'] or fields['date_added'] %}{{ fields['date_elapsed'] if fields['date_elapsed'] else fields['date_added'] }}{% else %}now{% endif %}",
+                "filters": [
+                    {
+                        "name": "dateparse",
+                        "args": "%Y-%m-%d %H:%M:%S"
+                    }
+                ]
+            },
+            "size": {
+                "selector": "td:nth-child(5)"
+            },
+            "seeders": {
+                "selector": "td:nth-child(6)"
+            },
+            "leechers": {
+                "selector": "td:nth-child(7)"
+            },
+            "grabs": {
+                "selector": "td:nth-child(8)"
+            },
+            "downloadvolumefactor": {
+                "case": {
+                    "*": 0
+                }
+            },
+            "uploadvolumefactor": {
+                "case": {
+                    "*": 1
+                }
+            }
+        }
+    }
+}
