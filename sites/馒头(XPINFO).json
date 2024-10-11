@@ -243,12 +243,16 @@
     },
     "conf": {
         "FREE": [
-            "//h1[@id='top']/b/font[@class='free']"
+            "//h2[contains(@class, 'title')]//span[contains(text(), 'Free')]"
         ],
         "2XFREE": [],
         "HR": [],
         "PEER_COUNT": [
-            "//div[@id='peercount']/b[1]"
+            "//div[@class='ant-descriptions-view']//tr//span[contains(text(), '\u500b\u505a\u7a2e\u8005')]",
+            "//div[@class='ant-descriptions-view']//tr//span[contains(text(), 'Seeders')]"
+        ],
+        "free_deadline": [
+            "//h2[contains(@class, 'title')]//span[contains(text(), 'Free')]/parent::span[@title]/@title"
         ]
     }
 }
