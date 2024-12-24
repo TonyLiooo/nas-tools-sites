@@ -137,4 +137,4 @@ if __name__ == "__main__":
     compress_folder("sites", "user.sites.jsons.zip")
 
     # 写入所有的json文件地址到文件中
-    gather_json_files("sites", "user.sites.jsons.txt", "https://raw.githubusercontent.com/hsuyelin/nas-tools-sites/master")
+    gather_json_files("sites", "user.sites.jsons.txt", "https://raw.githubusercontent.com/TonyLiooo/nas-tools-sites/master")
