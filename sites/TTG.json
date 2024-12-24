@@ -273,6 +273,9 @@
         ],
         "PEER_COUNT": [
             "//span[@id='dlstatus']"
+        ],
+        "free_deadline": [
+            "//div[@id='kt_d']//font[contains(text(), '\u5230\u671f\u65f6\u95f4\u4e3a')]/text()[1]"
         ]
     }
 }

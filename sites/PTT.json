@@ -240,6 +240,9 @@
         "HR": [],
         "PEER_COUNT": [
             "//div[@id='peercount']/b[1]"
+        ],
+        "free_deadline": [
+            "//h1[@id='top']//b[contains(text(), '\u514d\u8d39')]/span[@title]/@title"
         ]
     }
 }
